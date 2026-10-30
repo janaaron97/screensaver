@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Screensaver</title>
+    <meta name="description" content="Type any word or phrase and watch it come alive in an Omarchy-style terminal screensaver with 200 animations." />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="screen"></canvas>
+    <canvas id="glow"></canvas>
+
+    <main id="ui" aria-label="Screensaver setup">
+      <form id="prompt" autocomplete="off">
+        <label for="text" class="ps1" aria-hidden="true">❯</label>
+        <input id="text" name="text" maxlength="48" spellcheck="false" autocapitalize="off" placeholder="type a word or phrase" aria-label="Word or phrase to animate" />
+      </form>
+      <div id="opts">
+        <button type="button" data-opt="font">font <b></b></button>
+        <button type="button" data-opt="theme">colors <b></b></button>
+        <button type="button" data-opt="motion">motion <b></b></button>
+        <button type="button" data-opt="glow">glow <b></b></button>
+        <button type="button" data-opt="effect">effects <b></b></button>
+      </div>
+      <button type="button" id="start">start <kbd>↵</kbd></button>
+      <p id="hint">while playing: <kbd>←</kbd> <kbd>→</kbd> browse · <kbd>space</kbd> pause · <kbd>i</kbd> info · <kbd>f</kbd> fullscreen · <kbd>esc</kbd> exit</p>
+    </main>
+
+    <div id="hud" aria-live="polite"></div>
+    <button type="button" id="exit" aria-label="Exit screensaver">esc</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
